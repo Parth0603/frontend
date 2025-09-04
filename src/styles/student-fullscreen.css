@@ -1,0 +1,102 @@
+.student-layout {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.fullscreen-video {
+  flex: 1;
+  position: relative;
+  background: #000;
+}
+
+.student-video-overlay {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.student-video-overlay .local-video-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.student-video-overlay .preview-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #374151;
+  color: white;
+}
+
+.video-controls-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+}
+
+.video-controls-overlay .control-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.video-controls-overlay .control-btn.active {
+  background: #10b981;
+  color: white;
+}
+
+.video-controls-overlay .control-btn.muted,
+.video-controls-overlay .control-btn.off {
+  background: #ef4444;
+  color: white;
+}
+
+.video-controls-overlay .control-btn.hand-raised {
+  background: #f59e0b;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.video-controls-overlay .control-btn.end {
+  background: #dc2626;
+  color: white;
+}
+
+.video-controls-overlay .control-btn:hover {
+  transform: scale(1.1);
+}
+
+.tabbed-sidebar {
+  width: 350px;
+  background: #1f2937;
+  border-left: 1px solid #374151;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}

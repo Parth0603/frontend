@@ -1,0 +1,48 @@
+/* Import all modular CSS files */
+/* This file acts as the central point for all of your application's styles.
+   By importing each CSS module here, we ensure that the styles for every
+   component and section are loaded and applied correctly.
+*/
+@import './styles/base.css';
+@import './styles/animations.css';
+@import './styles/navbar.css';
+@import './styles/hero.css';
+@import './styles/stats.css';       /* Added for the Stats section */
+@import './styles/solution.css';   /* Added for the Solution section */
+@import './styles/zones.css';      /* Added for the Zones Preview section */
+@import './styles/features.css';   /* Added for the Key Features section */
+@import './styles/build.css';      /* Added for the Build section */
+@import './styles/use-cases.css';  /* Added for the Use Cases section */
+@import './styles/timeline.css';   /* Added for the How It Works section */
+
+@import './styles/cta.css';        /* Added for the CTA section */
+@import './styles/footer.css';
+@import './styles/login.css';
+@import './styles/dashboard.css';
+@import './styles/teaching.css';
+@import './styles/whiteboard.css';
+@import './styles/share-modal.css';
+@import './styles/student-view.css';
+@import './styles/student-interface.css';
+@import './styles/attendance-modal.css';
+@import './styles/gaming.css';
+@import './styles/events.css';
+@import './styles/chill.css';
+@import './styles/responsive.css';
+
+/* Global text visibility fix */
+.section-title {
+  color: var(--text-primary) !important;
+}
+
+.section-subtitle {
+  color: var(--text-secondary) !important;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+body {
+  box-sizing: border-box;
+  overflow-y: auto;
+  /* cursor: none; */
+}

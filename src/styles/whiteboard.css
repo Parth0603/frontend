@@ -1,0 +1,49 @@
+/* Whiteboard Styles */
+.color-picker {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+}
+
+.line-width {
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.whiteboard canvas {
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+  background: white;
+  cursor: crosshair;
+}
+
+.whiteboard-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.whiteboard-tools .tool-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--text-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whiteboard-tools .tool-btn.active,
+.whiteboard-tools .tool-btn:hover {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}

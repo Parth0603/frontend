@@ -1,0 +1,301 @@
+/* Student Interface Styles */
+.student-container {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 1rem;
+  height: calc(100vh - 80px);
+  padding: 1rem;
+  background: var(--bg-primary);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.video-area {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.teacher-screen {
+  width: 100%;
+  height: 300px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 2px solid rgba(16, 185, 129, 0.2);
+  margin-bottom: 1rem;
+}
+
+.teacher-screen .video-stream {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+  border-radius: 6px;
+}
+
+.teacher-screen .video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+.teacher-screen .video-placeholder i {
+  font-size: 3rem;
+  color: #10b981;
+}
+
+.teacher-screen .video-placeholder span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.student-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.my-video-small {
+  width: 150px;
+  height: 100px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-video-small .video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.my-video-small .video-placeholder i {
+  font-size: 1.5rem;
+  color: #10b981;
+}
+
+.my-video-small .video-placeholder span {
+  font-size: 0.8rem;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.control-buttons .control-btn {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-primary);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--text-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.control-buttons .control-btn:hover {
+  background: #10b981;
+  color: white;
+  transform: scale(1.1);
+}
+
+.control-buttons .control-btn.active {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.control-buttons .control-btn.end-call {
+  background: var(--error-color);
+  color: white;
+  border-color: var(--error-color);
+}
+
+.whiteboard-area {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  overflow: hidden;
+}
+
+.student-sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  overflow: hidden;
+}
+
+.student-sidebar .tabs {
+  display: flex;
+  background: var(--bg-primary);
+  border-radius: 8px 8px 0 0;
+}
+
+.student-sidebar .tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.8rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.student-sidebar .tab.active {
+  background: #10b981;
+  color: white;
+}
+
+.student-sidebar .tab:hover:not(.active) {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.participants-panel {
+  flex: 1;
+  padding: 1rem;
+}
+
+.participants-panel .panel-header h3 {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.participants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.participant-item.teacher {
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.participant-item.hand-raised {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.participant-avatar {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.participant-item.teacher .participant-avatar {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.hand-raised-indicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 0.7rem;
+  animation: bounce 2s infinite;
+}
+
+.participant-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.participant-info .name {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.participant-info .status {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+}
+
+/* Navbar student styling */
+.navbar.student {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(11, 17, 32, 0.98));
+  border-bottom-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .student-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .student-sidebar {
+    order: -1;
+    max-height: 300px;
+  }
+  
+  .student-sidebar .tabs {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .control-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .my-video-small {
+    width: 120px;
+    height: 80px;
+  }
+}

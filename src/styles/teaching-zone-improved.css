@@ -1,0 +1,365 @@
+/* Enhanced Teaching Zone Styles */
+
+/* Hand Raised Indicators */
+.hand-raised-alert {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: pulse-alert 2s infinite;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.hand-raised-alert i {
+  animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes pulse-alert {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* Participant Items */
+.participant-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background: #f8fafc;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.participant-item.teacher-item {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.participant-item.hand-raised-student {
+  background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+  border-color: #ff6b6b;
+  animation: hand-raised-glow 2s infinite;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+}
+
+@keyframes hand-raised-glow {
+  0%, 100% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2); }
+  50% { box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4); }
+}
+
+.participant-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.participant-avatar.teacher {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.hand-raised-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10px;
+  animation: bounce 1s infinite;
+  border: 2px solid white;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.participant-info {
+  flex: 1;
+}
+
+.participant-info .name {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.participant-info .status {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.participant-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.control-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+}
+
+.control-btn.active {
+  background: #10b981;
+  color: white;
+}
+
+.control-btn.muted, .control-btn.off {
+  background: #ef4444;
+  color: white;
+}
+
+.control-btn.hand-btn {
+  background: #ff6b6b;
+  color: white;
+  animation: pulse 1s infinite;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Screen Sharing Styles */
+.control-btn.sharing {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.sharing-indicator {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.shared-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.screen-content i {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.screen-content span {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.screen-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.screen-indicator .pulse {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+/* No Participants State */
+.no-participants {
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+}
+
+.no-participants i {
+  font-size: 32px;
+  margin-bottom: 12px;
+  display: block;
+  opacity: 0.5;
+}
+
+.no-participants span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.no-participants small {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Student Interface Improvements */
+.hand-raise-btn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 2px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hand-raise-btn.raised {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border-color: #ff6b6b;
+  animation: hand-raised-pulse 2s infinite;
+}
+
+.hand-raised-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  animation: pulse-overlay 1s infinite;
+}
+
+@keyframes hand-raised-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3); }
+  50% { transform: scale(1.02); box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5); }
+}
+
+@keyframes pulse-overlay {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.hand-raised-indicator-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ff6b6b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  animation: pulse 1s infinite;
+}
+
+.student-self {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  border: 2px solid #667eea;
+}
+
+/* Video Placeholder Improvements */
+.video-placeholder {
+  text-align: center;
+  color: #64748b;
+}
+
+.video-placeholder i {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+  opacity: 0.6;
+}
+
+.video-placeholder span {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.video-placeholder small {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Enhanced Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .participant-item {
+    padding: 8px;
+  }
+  
+  .participant-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .control-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+  
+  .hand-raise-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

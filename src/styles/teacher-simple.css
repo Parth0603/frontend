@@ -1,0 +1,535 @@
+/* Simple Teacher Interface */
+
+.teaching-interface {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  grid-template-rows: 400px 1fr;
+  gap: 1rem;
+  height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 1rem;
+}
+
+/* Video Area - Top Left */
+.video-section {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.teacher-video {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.video-stream {
+  flex: 1;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-placeholder {
+  text-align: center;
+  color: #94a3b8;
+}
+
+.video-placeholder i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.video-placeholder span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(16, 185, 129, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 12px;
+}
+
+.control-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.control-btn.active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.control-btn:not(.active) {
+  background: linear-gradient(135deg, #374151, #4b5563);
+  color: #9ca3af;
+}
+
+.control-btn.end-call {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+}
+
+.open-whiteboard-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.open-whiteboard-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Students Panel - Top Right */
+.students-panel {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.students-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.students-header h3 {
+  color: #f1f5f9;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.mute-all-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.mute-all-btn:hover {
+  transform: translateY(-1px);
+}
+
+.students-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.student-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  transition: all 0.3s ease;
+}
+
+.student-item:hover {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.student-item.hand-raised {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.student-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.hand-raised-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  animation: bounce 1s infinite;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-name {
+  color: #f1f5f9;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.student-status {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.student-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.student-controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.mute-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.lower-hand-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+/* Teaching Tools - Bottom Left */
+.teaching-tools {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tool-card {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  text-align: center;
+}
+
+.tool-card h4 {
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.tool-btn {
+  background: linear-gradient(135deg, #374151, #4b5563);
+  color: #f1f5f9;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.tool-btn:hover {
+  background: linear-gradient(135deg, #4b5563, #6b7280);
+  transform: translateY(-1px);
+}
+
+.tool-btn.primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.tool-btn.warning {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.tool-btn.danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.attendance-info {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Chat Panel - Bottom Right */
+.chat-panel {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.chat-header h3 {
+  color: #f1f5f9;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  max-height: 200px;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.message.host {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.sender {
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.time {
+  color: #94a3b8;
+}
+
+.message-content {
+  color: #e2e8f0;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.chat-input input {
+  flex: 1;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+}
+
+.chat-input input::placeholder {
+  color: #94a3b8;
+}
+
+.send-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Whiteboard Overlay */
+.whiteboard-overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.whiteboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(30, 41, 59, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.whiteboard-header h3 {
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.minimize-btn {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.minimize-btn:hover {
+  transform: translateY(-1px);
+}
+
+.whiteboard-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@media (max-width: 1200px) {
+  .teaching-interface {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto auto auto;
+  }
+  
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}

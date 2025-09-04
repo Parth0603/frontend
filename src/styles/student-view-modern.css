@@ -1,0 +1,533 @@
+/* Modern Student View Styles */
+
+.student-container {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1rem;
+  height: calc(100vh - 80px);
+  padding: 1rem;
+  background: var(--bg-primary);
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-area {
+  height: 250px;
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.teacher-screen {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border: 2px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-stream {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.video-placeholder {
+  text-align: center;
+  color: #94a3b8;
+  z-index: 2;
+}
+
+.video-placeholder i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #10b981;
+  opacity: 0.8;
+}
+
+.video-placeholder span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #e2e8f0;
+}
+
+.video-placeholder small {
+  font-size: 1rem;
+  opacity: 0.7;
+  color: #94a3b8;
+}
+
+.shared-screen {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.shared-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.screen-content {
+  text-align: center;
+  z-index: 2;
+  color: white;
+}
+
+.screen-content i {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  animation: pulse 2s infinite;
+}
+
+.screen-content span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.screen-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.screen-indicator .pulse {
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+.student-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.my-video-small {
+  width: 120px;
+  height: 70px;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.my-video-small::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);
+  border-radius: 10px;
+}
+
+.my-video-small .video-placeholder {
+  z-index: 2;
+}
+
+.my-video-small .video-placeholder i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #10b981;
+}
+
+.my-video-small .video-placeholder span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.control-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.control-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.control-btn:hover::before {
+  opacity: 1;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn:active {
+  transform: translateY(0);
+}
+
+.control-btn:first-child,
+.control-btn:nth-child(2) {
+  background: linear-gradient(135deg, #374151, #4b5563);
+  color: #9ca3af;
+}
+
+.hand-raise-btn {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hand-raise-btn.raised {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border-color: #ff6b6b;
+  animation: hand-pulse 2s infinite;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+}
+
+.hand-raise-btn.raised::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+  animation: shimmer 2s infinite;
+  border-radius: 50px;
+}
+
+@keyframes hand-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.control-btn.end-call {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.control-btn.end-call:hover {
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5);
+}
+
+.whiteboard-area {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.student-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.tabs {
+  display: flex;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 0.4rem;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.8rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.tab:hover:not(.active) {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.chat-panel,
+.participants-panel,
+.notes-panel,
+.test-panel {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.02));
+}
+
+.panel-header h3 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 250px;
+}
+
+.message {
+  background: var(--bg-primary);
+  padding: 0.8rem;
+  border-radius: 12px;
+  border-left: 3px solid transparent;
+}
+
+.message.host {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+  border-left-color: #10b981;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.sender {
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.time {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.message-content {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.chat-input {
+  padding: 1rem;
+  border-top: 1px solid rgba(16, 185, 129, 0.1);
+  display: flex;
+  gap: 0.8rem;
+}
+
+.chat-input input {
+  flex: 1;
+  background: var(--bg-primary);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--text-primary);
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.send-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Navigation improvements */
+.nav-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.session-id {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.2rem 0.8rem;
+  border-radius: 12px;
+}
+
+.session-time {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.hand-raised-indicator-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  animation: pulse 1s infinite;
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .student-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  
+  .student-sidebar {
+    order: -1;
+    max-height: 300px;
+  }
+  
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .student-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .control-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .my-video-small {
+    width: 120px;
+    height: 68px;
+  }
+  
+  .hand-raise-btn {
+    min-width: 120px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

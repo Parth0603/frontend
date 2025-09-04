@@ -1,0 +1,41 @@
+.student-controls-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.my-video {
+  width: 150px;
+  height: 100px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.video-placeholder.small {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+}
+
+.video-placeholder.small i {
+  font-size: 1.5rem;
+  color: #10b981;
+  margin-bottom: 0.5rem;
+}
+
+.video-placeholder.small span {
+  font-size: 0.8rem;
+}
+
+.student-video-controls {
+  display: flex;
+  gap: 0.5rem;
+}

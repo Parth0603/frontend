@@ -1,0 +1,45 @@
+.meeting-details {
+  margin: 1.5rem 0;
+}
+
+.detail-item {
+  margin-bottom: 1rem;
+}
+
+.detail-item label {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.meeting-id-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-primary);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.meeting-id-display span {
+  flex: 1;
+  color: var(--text-primary);
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.meeting-id-display button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.meeting-id-display button:hover {
+  background: #059669;
+}
