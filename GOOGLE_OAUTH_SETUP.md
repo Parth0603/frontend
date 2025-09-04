@@ -11,7 +11,9 @@
    - Go to "APIs & Services" > "Credentials"
    - Click "Create Credentials" > "OAuth 2.0 Client IDs"
    - Choose "Web application"
-   - Add authorized redirect URI: `http://localhost:5000/api/auth/google/callback`
+   - Add authorized redirect URIs:
+     - `http://localhost:5000/api/auth/google/callback` (for local development)
+     - `https://backendserver-imeb.onrender.com/api/auth/google/callback` (for production)
 
 ## Step 2: Update Environment Variables
 
