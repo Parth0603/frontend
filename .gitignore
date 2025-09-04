@@ -94,7 +94,7 @@ dist
 # Gatsby build output
 .cache/
 # Add storybook build output directory here
-public
+# public
 
 # SvelteKit build output
 .svelte-kit
@@ -118,6 +118,9 @@ public/build/
 # Workspace uploads
 workspace/uploads/
 backend/uploads/
+
+# Backend (if deploying frontend only)
+# backend/
 
 # Package locks (optional - remove if you want to include them)
 # package-lock.json

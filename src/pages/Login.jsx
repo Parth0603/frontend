@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { authAPI } from '../services/api.js';
 import '../styles/login-animations.css';
+import logo from '../assets/logo.png';
 
 function Login({ navigate, onLogin }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -70,7 +71,7 @@ function Login({ navigate, onLogin }) {
         
         <div style={{textAlign: 'center', marginBottom: '1.5rem'}}>
           <div style={{width: '60px', height: '60px', background: 'rgba(255, 255, 255, 0.95)', borderRadius: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem', boxShadow: '0 20px 40px rgba(99, 102, 241, 0.3)', animation: 'glow 3s ease-in-out infinite', position: 'relative', overflow: 'hidden'}}>
-            <img src="/src/assets/logo.png" alt="SYNTRA" style={{width: '95%', height: '95%', objectFit: 'cover'}} />
+            <img src={logo} alt="SYNTRA" style={{width: '95%', height: '95%', objectFit: 'cover'}} />
             <div style={{position: 'absolute', inset: '-2px', background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color))', borderRadius: '20px', zIndex: -1, filter: 'blur(8px)', opacity: 0.7}}></div>
           </div>
           <h2 style={{fontSize: '1.8rem', fontWeight: '800', color: 'var(--text-primary)', marginBottom: '0.5rem', letterSpacing: '-0.025em'}}>Welcome to <span style={{background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color))', backgroundSize: '200% 200%', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', animation: 'gradientShift 4s ease-in-out infinite'}}>SYNTRA</span></h2>
@@ -132,11 +133,7 @@ function Login({ navigate, onLogin }) {
           <button 
             type="button"
             onClick={() => {
-              console.log('Google OAuth button clicked');
-              const backendUrl = 'https://backendserver-imeb.onrender.com';
-              const googleAuthUrl = `${backendUrl}/api/auth/google`;
-              console.log('Redirecting to:', googleAuthUrl);
-              window.location.href = googleAuthUrl;
+              window.location.href = 'https://backendserver-imeb.onrender.com/api/auth/google';
             }}
             style={{width: '100%', padding: '0.875rem', background: 'rgba(255, 255, 255, 0.95)', border: '1px solid rgba(148, 163, 184, 0.2)', borderRadius: '12px', color: '#1f2937', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', cursor: 'pointer', fontWeight: '500', fontSize: '0.95rem', transition: 'all 0.3s ease'}}
             onMouseOver={(e) => (e.target.style.transform = 'translateY(-1px)', e.target.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)')}
